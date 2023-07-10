@@ -1,10 +1,10 @@
 const axios = require('axios');
-
-const url = 'http://127.0.0.1:3000';
+const dotenv = require('dotenv');
+dotenv.config();
 
 describe('Server Status', () => {
   test('Server Running', async () => {
-    const res = await axios.get(url)
+    const res = await axios.get(process.env.URL)
     expect(res).toBeTruthy()
     expect(res.status).toBe(200)
   })
